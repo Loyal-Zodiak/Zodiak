@@ -1,8 +1,10 @@
 const router = require('express').Router(),
   pasaranRoute = require('./pasaran'),  
   zodiakRoute = require('./zodiak'),  
-  translateRoute = require('./translate')  
+  translateRoute = require('./translate'),
+  UserController = require('../controllers/user')  
 
+router.post('/google', UserController.googleLogin)
 router.use('/pasaran', pasaranRoute)
 router.use('/zodiak', zodiakRoute)
 router.use('/translate', translateRoute)
