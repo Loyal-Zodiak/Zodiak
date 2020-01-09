@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Salsa&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div style="position: relative; width: 100%; height: 100vh;background-color: wheat;display: flex;align-items: center;justify-content: center;overflow: hidden;z-index: 0;">
+        <div style="position: absolute; top: 0; left: 0; width: 100%;">
+            <video autoplay loop muted style="width: 100%;height: 100%;">
+                <source src="./src/vid_bg.mp4">
+            </video>
+        </div>
+    </div>
+    <div id="form" style="position: absolute; top: 0; left: 50vh;">
+        <div class="container">
+            <div class="row" style="width: 100vh;">
+                <div class="col-3"></div>
+                <div class="col-6 text-center">
+                    <div>
+                        <div class="text-center">
+                            <img class="pb-2 pt-5" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Zodiac_wheel.svg/400px-Zodiac_wheel.svg.png">
+                        </div>
+                        <h1 class="text-white" style="font-size: 80px; text-shadow: 4px 4px 4px #aaa;">Loyal Zodiac</h1>
+
+                    </div>
+                </div>
+                <div class="col-3"></div>
+            </div>
+        </div>
+    </div>
+    <div id="user-input" style="position: absolute; top: 0; left: 50vh;">
+        <div class="row d-flex justify-content-center align-items-center flex-column" style="width: 100vh;height: 100vh;">
+            <h1 class="text-white" style="font-size: 80px;text-shadow: 4px 4px 4px #262626;">Siapa Kamu?</h1>
+            <form class="text-center">
+                <div class="text-white form-group">
+                  <label style="font-size: 30px;text-shadow: 4px 4px 4px #262626;" for="input-nama">Nama</label>
+                  <input type="text" class="form-control" id="input-nama">
+                </div>
+                <div class="text-white form-group">
+                  <label style="font-size: 30px;text-shadow: 4px 4px 4px #262626;" for="input-tgl-lahir">Tanggal Lahir</label>
+                  <input type="text" class="form-control" id="input-tgl-lahir" placeholder="dd-mm-yyy">
+                </div>
+                <button id="btn-submit-nama" type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+    <script src="./jquery.js"></script>
+</body>
+</html>
