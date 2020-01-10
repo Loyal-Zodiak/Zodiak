@@ -103,7 +103,7 @@ class Translation {
                     </tr>
                     </tbody>
                 </table>
-                <a id="btn-translate" href="#" class="btn btn-primary">Translate</a>
+                <button type="button" class="btn btn-outline-primary" id="btn-translate" style="width:100%;">Translate</button>
                 </div>
             </div>
         `
