@@ -59,7 +59,7 @@ function getToday(sign){
                       </tr>
                     </tbody>
                   </table>
-                  <a id="btn-translate" href="#" class="btn btn-primary">Bahasa Indonesia</a>
+                  <a id="btn-translate" href="#" class="btn btn-primary">Translate</a>
                 </div>
               </div>
                 `).hide().fadeIn(400)
@@ -125,7 +125,7 @@ function getTomorrow(sign){
                     </tr>
                   </tbody>
                 </table>
-                <a id="btn-translate" href="#" class="btn btn-primary">Bahasa Indonesia</a>
+                <a id="btn-translate" href="#" class="btn btn-primary">Translate</a>
               </div>
               `).hide().fadeIn(400)
 
