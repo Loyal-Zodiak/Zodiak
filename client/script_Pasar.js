@@ -3,6 +3,14 @@ $(document).ready(function (){
 
     $("#user-input").hide()
     $("#user-zodiac").hide()
+    $('#btn-kembali').hide()
+    
+    $('#btn-kembali').on('click', ()=>{
+        $("#user-zodiac").fadeOut(1000)
+        $("#field-user").fadeOut(1000)
+        $('#btn-kembali').fadeOut(1000)
+        $("#user-input").fadeIn(1000)
+    })
 
     // $("#user-input").hide()
 
@@ -16,6 +24,8 @@ $(document).ready(function (){
         })
         .then(response =>{
             $("#user-zodiac").fadeIn(1000)
+            $("#field-user").empty()
+            $("#field-ramalan").empty()
             console.log(response)
             $("#field-user").append(`
                 <h1 id="nama-user" class="text-white" style="font-size: 80px;text-shadow: 4px 4px 4px #262626;">${response.data.nama}</h1>
@@ -28,6 +38,7 @@ $(document).ready(function (){
                 <h4 id="zodiac-user" class="text-white pt-5" style="font-size: 80px;text-shadow: 4px 4px 4px #262626;">${response.data.zodiak}</h4>
                 <div id="btn-ramalan" class="btn btn-light mt-3">Lihat Ramalan</div>
         `).hide().fadeIn(500)
+        $('#btn-kembali').fadeIn(500)
         })
     })
 })
