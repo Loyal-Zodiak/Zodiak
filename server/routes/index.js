@@ -6,6 +6,7 @@ const router = require('express').Router(),
 
 router.post('/google', UserController.googleLogin)
 // router.get('/github', UserController.githubLogin)
+router.use(require('../middlewares/auth'))
 router.use('/pasaran', pasaranRoute)
 router.use('/zodiak', zodiakRoute)
 router.use('/translate', translateRoute)

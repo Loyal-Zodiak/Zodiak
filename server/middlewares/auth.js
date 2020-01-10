@@ -1,5 +1,5 @@
 const { decodeToken } = require('../helpers/jwt'),
-  User = require('../models/user')
+  User = require('../controllers/user')
 
 function authenticate(req, res, next) {
   try {
@@ -10,4 +10,4 @@ function authenticate(req, res, next) {
   }
 }
 
-module.exports = { authenticate }
+module.exports = authenticate 

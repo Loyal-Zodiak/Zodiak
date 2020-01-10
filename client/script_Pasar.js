@@ -18,9 +18,21 @@ $(document).ready(function (){
         $("#user-input").fadeOut(1000)
         let nama = $("#input-nama").val()
         let tgl = $("#input-tgl-lahir").val()
-        $.post('http://localhost:3000/pasaran/',{
-            nama,
-            tgl
+        // $.post('http://localhost:3000/pasaran/',{
+        //     nama,
+        //     tgl
+        // })
+        $.ajax({
+            type: "POST",
+            url: "http://localhost:3000/pasaran/",
+            data: {
+                nama,
+                tgl
+            },
+            headers: {
+                token: localStorage.getItem('token')
+            },
+            dataType: "json"
         })
         .then(response =>{
             $("#user-zodiac").fadeIn(1000)
