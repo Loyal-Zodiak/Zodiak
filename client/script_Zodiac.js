@@ -16,8 +16,9 @@ function getToday(sign){
         url: `http://localhost:3000/zodiak?sign=${sign}`,
         type: 'post', // Untuk img src dan h5 , kata "taurus" diganti ke => ${parameter}
         success: function (result) {
+          console.log(result)
             $('.horoscopeData').html(`
-            <div class="card" style="width: 18rem;">
+            <div class="card">
             <img src="https://www.astrologyzone.com/wp-content/themes/JointsWP-master/assets/images/horoscopes/horoscope-article-hero/az_img_horoscope_${sign}.png" class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title">${sign}</h5>
@@ -46,7 +47,7 @@ function getTomorrow(sign){
         type: 'post', // Untuk img src dan h5 , kata "taurus" diganti ke => ${parameter}
         success: function (result) {
             $('.horoscopeData').html(`
-            <div class="card" style="width: 18rem;">
+            <div class="card">
             <img src="https://www.astrologyzone.com/wp-content/themes/JointsWP-master/assets/images/horoscopes/horoscope-article-hero/az_img_horoscope_${sign}.png" class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title">${sign}</h5>
@@ -75,7 +76,7 @@ function getYesterday(sign){
         type: 'post', // Untuk img src dan h5 , kata "taurus" diganti ke => ${parameter}
         success: function (result) {
             $('.horoscopeData').html(`
-            <div class="card" style="width: 18rem;">
+            <div class="card">
             <img src="https://www.astrologyzone.com/wp-content/themes/JointsWP-master/assets/images/horoscopes/horoscope-article-hero/az_img_horoscope_${sign}.png" class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title">Taurus</h5>
