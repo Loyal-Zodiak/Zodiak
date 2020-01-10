@@ -1,4 +1,4 @@
-const googleTranslate = require('google-translate')(process.env.GOGLE_TRANSLATE_KEY, { concurrentLimit: 20 });
+const googleTranslate = require('google-translate')(process.env.GOGLE_TRANSLATE_KEY);
 class TranslateController{
     
     static findLanguages(req, res, next){

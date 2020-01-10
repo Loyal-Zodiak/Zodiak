@@ -34,6 +34,9 @@ function getToday(sign){
     
         url: `http://localhost:3000/zodiak?sign=${sign}`,
         type: 'post', // Untuk img src dan h5 , kata "taurus" diganti ke => ${parameter}
+        headers: {
+          token: localStorage.getItem('token')
+        },
         success: function (result) {
           console.log(result)
           zodiak = result
@@ -87,6 +90,9 @@ function getTomorrow(sign){
   $.ajax({
     url: `http://localhost:3000/zodiak/tomorrow?sign=${sign}`,
     type: 'post', // Untuk img src dan h5 , kata "taurus" diganti ke => ${parameter}
+    headers: {
+      token: localStorage.getItem('token')
+    },
     success: function (result) {
       zodiak = result
       zodiak.name = sign
@@ -138,6 +144,9 @@ function getYesterday(sign){
     $.ajax({
         url: `http://localhost:3000/zodiak/yesterday?sign=${sign}`,
         type: 'post', // Untuk img src dan h5 , kata "taurus" diganti ke => ${parameter}
+        headers: {
+          token: localStorage.getItem('token')
+        },
         success: function (result) {
           zodiak = result
           zodiak.name = sign

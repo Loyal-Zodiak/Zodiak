@@ -25,6 +25,9 @@ class Translation {
             url: apiUrl+"/translate",
             data: form,
             dataType: "json",
+            headers: {
+                token: localStorage.getItem('token')
+            }
         })
     }
     static generateSelectLanguage(){
