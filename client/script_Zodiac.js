@@ -18,6 +18,7 @@ $(document).ready(function () {
     })
 
     $(document).on('click',"#tomorrow-btn", function(){
+      // alert('tomorrow')
       let zodiac = $('#zodiac-user').text().toLowerCase()
       getTomorrow(zodiac)
     })
@@ -25,7 +26,7 @@ $(document).ready(function () {
 })
 
 function getToday(sign){
-  $('#field-ramalan').empty()
+  $('#field-ramalan').fadeOut(400).html('').show()
   $.ajax({
         url: `http://localhost:3000/zodiak?sign=${sign}`,
         type: 'post', // Untuk img src dan h5 , kata "taurus" diganti ke => ${parameter}
@@ -130,7 +131,7 @@ function getTomorrow(sign){
                 <a id="btn-translate" href="#" class="btn btn-primary">Translate</a>
               </div>
               `).hide().fadeIn(400)
-
+              zodiak = result
             $('.horoscopeData').html(`
             <div class="card" style="width: 100%;">
             <img src="https://www.astrologyzone.com/wp-content/themes/JointsWP-master/assets/images/horoscopes/horoscope-article-hero/az_img_horoscope_${sign.toLowerCase()}.png" class="card-img-top" alt="...">
@@ -201,7 +202,7 @@ function getYesterday(sign){
                 </table>
                 <a id="btn-translate" href="#" class="btn btn-primary">Bahasa Indonesia</a>
               </div>
-              `).hide().fadeIn(400)
+              `).fadeIn(400)
 
             $('.horoscopeData').html(`
             <div class="card" style="width: 18rem;">

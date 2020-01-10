@@ -4,6 +4,8 @@ $(document).ready(function (){
     $("#user-input").hide()
     $("#user-zodiac").hide()
 
+    // $("#user-input").hide()
+
     $('#btn-submit-nama').on('click',function(){
         $("#user-input").fadeOut(1000)
         let nama = $("#input-nama").val()
