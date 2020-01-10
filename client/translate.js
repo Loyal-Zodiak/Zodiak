@@ -10,6 +10,7 @@ const example = {
     "lucky_time":"4am"
 }
 class Translation {
+    
     static $languages(){
         return $.ajax({
             url: apiUrl + '/translate/languages'
@@ -21,6 +22,29 @@ class Translation {
             url: apiUrl+"/translate",
             data: form,
             dataType: "json",
+        })
+    }
+    static generateSelectLanguage(){
+        Translation
+        .$languages()
+        .done( ({languageCodes}) => {
+            // console.log(languageCodes)
+            let name;
+            const elLanguage = $('#language')
+            languageCodes.forEach(language => {
+                if (language.name.includes('isi-')) {
+                    name = language.name.substring(4)
+                }else if (language.name.includes('isi')) {
+                    name = language.name.substring(3)
+                }else{
+                    name = language.name.substring(1)
+                }
+                let html = `<option value="${language.language}">${name}</option>`
+                elLanguage.append(html)
+            });
+        })
+        .fail(errs => {
+            console.log(errs)
         })
     }
     static doTranslate(e){
@@ -75,29 +99,7 @@ class Translation {
 }
 
 $(document).ready(function () {
-    
-    Translation
-        .$languages()
-        .done( ({languageCodes}) => {
-            // console.log(languageCodes)
-            let name;
-            const elLanguage = $('#language')
-            languageCodes.forEach(language => {
-                if (language.name.includes('isi-')) {
-                    name = language.name.substring(4)
-                }else if (language.name.includes('isi')) {
-                    name = language.name.substring(3)
-                }else{
-                    name = language.name.substring(1)
-                }
-                let html = `<option value="${language.language}">${name}</option>`
-                elLanguage.append(html)
-            });
-        })
-        .fail(errs => {
-            console.log(errs)
-        })
-    
+    Translation.generateSelectLanguage()
     $(document).on('click', '#translate', Translation.doTranslate)
 });
 
