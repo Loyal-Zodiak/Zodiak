@@ -31,6 +31,7 @@ function getToday(sign){
   }
   $('#field-ramalan').fadeOut(400).html('').show()
   $.ajax({
+    
         url: `http://localhost:3000/zodiak?sign=${sign}`,
         type: 'post', // Untuk img src dan h5 , kata "taurus" diganti ke => ${parameter}
         success: function (result) {
