@@ -92,12 +92,12 @@ function getToday(sign){
 }
 
 function getTomorrow(sign){
-  zodiak = result
   $('#field-ramalan').empty()
-    $.ajax({
-        url: `http://localhost:3000/zodiak/tomorrow?sign=${sign}`,
-        type: 'post', // Untuk img src dan h5 , kata "taurus" diganti ke => ${parameter}
-        success: function (result) {
+  $.ajax({
+    url: `http://localhost:3000/zodiak/tomorrow?sign=${sign}`,
+    type: 'post', // Untuk img src dan h5 , kata "taurus" diganti ke => ${parameter}
+    success: function (result) {
+      zodiak = result
 
           $('#field-ramalan').append(`
           <div id="yesterday-btn" class="btn btn-white" style="background-color: whitesmoke;">Yesterday</div>
@@ -165,13 +165,12 @@ function getTomorrow(sign){
 
 
 function getYesterday(sign){
-  zodiak = result
   $('#field-ramalan').empty()
     $.ajax({
         url: `http://localhost:3000/zodiak/yesterday?sign=${sign}`,
         type: 'post', // Untuk img src dan h5 , kata "taurus" diganti ke => ${parameter}
         success: function (result) {
-
+          zodiak = result
           $('#field-ramalan').append(`
           <div id="yesterday-btn" class="btn btn-white" style="background-color: whitesmoke;">Yesterday</div>
           <div id="today-btn" class="btn btn-white" style="background-color: whitesmoke;">Today</div>
