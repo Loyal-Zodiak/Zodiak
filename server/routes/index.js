@@ -5,7 +5,7 @@ const router = require('express').Router(),
   UserController = require('../controllers/user')  
 
 router.post('/google', UserController.googleLogin)
-router.get('/github', UserController.githubLogin)
+// router.get('/github', UserController.githubLogin)
 router.use('/pasaran', pasaranRoute)
 router.use('/zodiak', zodiakRoute)
 router.use('/translate', translateRoute)
