@@ -1,5 +1,6 @@
 const {OAuth2Client} = require('google-auth-library'),
-  axios = require('axios')
+  axios = require('axios'),
+  { generateToken } = require('../helpers/jwt')
 
 class UserController {
   static googleLogin(req, res, next) {
@@ -11,9 +12,10 @@ class UserController {
     })
       .then(ticket => {
         const googlePayload = ticket.getPayload()
-        // lanjut ke JOVI
-        console.log(googlePayload.name)
-        res.status(200).json({name: googlePayload.name})
+        res.status(200).json({
+          name: googlePayload.name,
+          token: generateToken({Authorization: "ok"})
+        })
       })
       .catch(next)
   }
