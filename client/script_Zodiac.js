@@ -1,3 +1,5 @@
+let zodiak;
+
 $(document).ready(function () {
     $(document).on('click',"#btn-ramalan", function(){
       let zodiac = $('#zodiac-user').text().toLowerCase()
@@ -27,7 +29,8 @@ function getToday(sign){
         url: `http://localhost:3000/zodiak?sign=${sign}`,
         type: 'post', // Untuk img src dan h5 , kata "taurus" diganti ke => ${parameter}
         success: function (result) {
-          console.log(result)
+          zodiak = result
+          // console.log(result)
             $('#field-ramalan').append(`
             <div id="yesterday-btn" class="btn btn-white" style="background-color: whitesmoke;">Yesterday</div>
             <div id="today-btn" class="btn btn-white" style="background-color: whitesmoke;">Today</div>
@@ -87,6 +90,7 @@ function getToday(sign){
 }
 
 function getTomorrow(sign){
+  zodiak = result
   $('#field-ramalan').empty()
     $.ajax({
         url: `http://localhost:3000/zodiak/tomorrow?sign=${sign}`,
@@ -159,6 +163,7 @@ function getTomorrow(sign){
 
 
 function getYesterday(sign){
+  zodiak = result
   $('#field-ramalan').empty()
     $.ajax({
         url: `http://localhost:3000/zodiak/yesterday?sign=${sign}`,
