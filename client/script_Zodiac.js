@@ -72,6 +72,9 @@ function getToday(sign){
               </div>
                 `).hide().fadeIn(400)
 
+        },
+        fail: function(error){
+          alert(error)
         }
     })
 }
@@ -119,6 +122,9 @@ function getTomorrow(sign){
               </div>
               `).hide().fadeIn(400)
               zodiak = result
+        },
+        fail: function(error){
+          alert(error)
         }
     })
 }
@@ -167,6 +173,9 @@ function getYesterday(sign){
               </div>
               `).hide().fadeIn(400)
 
+        },
+        fail: function(error){
+          alert(error)
         }
     })
 }
