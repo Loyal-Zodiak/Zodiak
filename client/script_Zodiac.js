@@ -26,6 +26,9 @@ $(document).ready(function () {
 })
 
 function getToday(sign){
+  if(sign=='sagitarius'){
+    sign = 'sagittarius'
+  }
   $('#field-ramalan').fadeOut(400).html('').show()
   $.ajax({
         url: `http://localhost:3000/zodiak?sign=${sign}`,
@@ -63,7 +66,7 @@ function getToday(sign){
                       </tr>
                     </tbody>
                   </table>
-                  <button type="button" class="btn btn-outline-primary" style="width:100%;">Translate</button>
+                  <button type="button" class="btn btn-outline-primary" id="btn-translate" style="width:100%;">Translate</button>
                 </div>
               </div>
                 `).hide().fadeIn(400)
@@ -73,6 +76,9 @@ function getToday(sign){
 }
 
 function getTomorrow(sign){
+  if(sign=='sagitarius'){
+    sign = 'sagittarius'
+  }
   $('#field-ramalan').empty()
   $.ajax({
     url: `http://localhost:3000/zodiak/tomorrow?sign=${sign}`,
@@ -108,7 +114,7 @@ function getTomorrow(sign){
                     </tr>
                   </tbody>
                 </table>
-                <a id="btn-translate" href="#" class="btn btn-primary">Bahasa Indonesia</a>
+                <button type="button" class="btn btn-outline-primary" id="btn-translate" style="width:100%;">Translate</button>
               </div>
               `).hide().fadeIn(400)
               zodiak = result
@@ -118,6 +124,9 @@ function getTomorrow(sign){
 
 
 function getYesterday(sign){
+  if(sign=='sagitarius'){
+    sign = 'sagittarius'
+  }
   $('#field-ramalan').empty()
     $.ajax({
         url: `http://localhost:3000/zodiak/yesterday?sign=${sign}`,
@@ -153,9 +162,9 @@ function getYesterday(sign){
                     </tr>
                   </tbody>
                 </table>
-                <a id="btn-translate" href="#" class="btn btn-primary">Translate</a>
+                <button type="button" class="btn btn-outline-primary" id="btn-translate" style="width:100%;">Translate</button>
               </div>
-              `).fadeIn(400)
+              `).hide().fadeIn(400)
 
         }
     })

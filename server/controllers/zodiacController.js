@@ -11,7 +11,7 @@ class ZodiacController{
         .catch(err=>{
             // console.log(err)
             // res.status(500).json(err)
-            next()
+            next({status:500, message:`Internal server error`})
         })
     }
 
