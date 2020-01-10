@@ -12,6 +12,7 @@ $(document).ready(function () {
     })
 
     $(document).on('click',"#yesterday-btn", function(){
+      // alert("hey")
       let zodiac = $('#zodiac-user').text().toLowerCase()
       getYesterday(zodiac)
     })
@@ -29,6 +30,7 @@ function getToday(sign){
         url: `http://localhost:3000/zodiak?sign=${sign}`,
         type: 'post', // Untuk img src dan h5 , kata "taurus" diganti ke => ${parameter}
         success: function (result) {
+          console.log(result)
           zodiak = result
           // console.log(result)
             $('#field-ramalan').append(`
