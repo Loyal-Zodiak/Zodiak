@@ -14,13 +14,18 @@
     <title>Document</title>
 </head>
 <body>
-    <div style="position: relative; width: 100%; height: 100vh;background-color: wheat;display: flex;align-items: center;justify-content: center;overflow: hidden;z-index: 0;">
-        <div style="position: absolute; top: 0; left: 0; width: 100%;">
-            <video autoplay loop muted style="width: 100%;height: 100%;">
-                <source src="./src/vid_bg.mp4">
-            </video>
-        </div>
-    </div>
+    <style>
+        #myVideo {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+        }
+    </style>
+    <video autoplay muted loop id="myVideo">
+        <source src="./src/vid_bg.mp4">
+    </video>
     <div id="form" style="position: absolute; top: 0; left: 50vh;">
         <div class="container">
             <div class="row" style="width: 100vh;">
@@ -60,9 +65,9 @@
         </div>
     </div>
 
-    <div id="user-zodiac" style="position: absolute; top: 0; left:0 ;width: 100%; height: 100%;">
+    <div id="user-zodiac" style="position: absolute; top: 0; left:0 ;width: 100%; height: 100%; bottom: 0;">
         <div class='row' style="width: 100%;height: 100%;">
-            <div id="field-user" class="col-4 text-center p-5" style="width: 100%;height: 100%;opacity: 0.8; background-color:rgba(156, 204, 240, .2) ;">
+            <div id="field-user" class="col-4 text-center p-5" style="width: 100%;height: 100vh;opacity: 0.8; background-color:rgba(156, 204, 240, .2) ;">
                 
             </div>
             <div id="field-ramalan" class="col-8 text-center p-5" style="width: 100%;height: 100%;">
@@ -99,6 +104,7 @@
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     
     <script src="./jquery.js"></script>
+    <script src="./script_Pasar.js"></script>
     <script src="./script_Zodiac.js"></script>
     <script src="./scriptLogin.js"></script>
     <script src="translate.js"></script>
