@@ -47,6 +47,7 @@
         })
           .then(({ data }) => {
             console.log("login", data);
+            localStorage.setItem('name', data.name)
           })
           .catch(err => {
             alert("login failed");
