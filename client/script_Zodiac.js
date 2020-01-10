@@ -63,7 +63,7 @@ function getToday(sign){
                       </tr>
                     </tbody>
                   </table>
-                  <a id="btn-translate" href="#" class="btn btn-primary">Translate</a>
+                  <button type="button" class="btn btn-outline-primary" style="width:100%;">Translate</button>
                 </div>
               </div>
                 `).hide().fadeIn(400)
@@ -108,11 +108,10 @@ function getTomorrow(sign){
                     </tr>
                   </tbody>
                 </table>
-                <a id="btn-translate" href="#" class="btn btn-primary">Translate</a>
+                <a id="btn-translate" href="#" class="btn btn-primary">Bahasa Indonesia</a>
               </div>
               `).hide().fadeIn(400)
               zodiak = result
-
         }
     })
 }
