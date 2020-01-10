@@ -13,6 +13,7 @@ function onSignIn(googleUser) {
       $("#user-input").show()
       $("#input-nama").val(data.name)
       localStorage.setItem("token", data.token);
+      Translation.generateSelectLanguage()
     })
     .catch(err => {
       alert("login failed");

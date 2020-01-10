@@ -13,7 +13,10 @@ class Translation {
     
     static $languages(){
         return $.ajax({
-            url: apiUrl + '/translate/languages'
+            url: apiUrl + '/translate/languages',
+            headers: {
+                token: localStorage.getItem('token')
+            }
         });
     }
     static $translate(form){
@@ -112,7 +115,7 @@ class Translation {
 }
 
 $(document).ready(function () {
-    Translation.generateSelectLanguage()
+    // Translation.generateSelectLanguage()
     $(document).on('click', '#doTranslate', Translation.doTranslate)
     $(document).on('click', '#btn-translate', function (e) {
         $('#modal-language').modal('show')
