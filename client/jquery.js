@@ -1,6 +1,7 @@
 $(document).ready(function (){
-    $("#form").hide()
+    $("#form").show()
 
+    $("#user-input").hide()
     $("#user-zodiac").hide()
 
     $('#btn-submit-nama').on('click',function(){
