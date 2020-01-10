@@ -80,7 +80,7 @@ class Translation {
             <div id="today-btn" class="btn btn-white" style="background-color: whitesmoke;">Today</div>
             <div id="tomorrow-btn" class="btn btn-white" style="background-color: whitesmoke;">Tomorrow</div>
             <div class="card m-5 mx-auto" style="width: 40rem; background-color : rgba(30, 36, 41, 0.363) ;" height="400px">
-                <img src="https://www.astrologyzone.com/wp-content/themes/JointsWP-master/assets/images/horoscopes/horoscope-article-hero/az_img_horoscope_${zodiak.compatibility.toLowerCase()}.png" class="card-img-top">
+                <img src="https://www.astrologyzone.com/wp-content/themes/JointsWP-master/assets/images/horoscopes/horoscope-article-hero/az_img_horoscope_${zodiak.name.toLowerCase()}.png" class="card-img-top">
                 <div class="card-body text-white" style="font-size: 25px;">
                 <p class="card-text">${arrays[10].translatedText}</p>
                 <table class="table table-borderless text-white table-responsive">

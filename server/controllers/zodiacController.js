@@ -2,14 +2,16 @@ const axios = require('axios')
 
 class ZodiacController{
     static getHoroscope(req, res, next){
-        console.log("udah masuk static")
+        // console.log(req.query.sign)
         axios.post(`https://aztro.sameerkumar.website/?sign=${req.query.sign}&day=today`)
         .then(result=>{
             console.log('RESULT===>',result.data)
             res.status(200).json(result.data)
         })
         .catch(err=>{
-            res.status(500).json(err)
+            // console.log(err)
+            // res.status(500).json(err)
+            next()
         })
     }
 
@@ -21,19 +23,22 @@ class ZodiacController{
         })
         .catch(err=>{
             console.log(err)
-            res.status(500).json(err)
+            // res.status(500).json(err)
+            next()
         })
     }
 
     static getTomorrowHoroscope(req, res, next){
-        console.log('Udah masuk static')
+        // console.log(req.query.sign)
         axios.post(`https://aztro.sameerkumar.website/?sign=${req.query.sign}&day=tomorrow`)
         .then(result=>{
             console.log('RESULT TOMORROW===>',result.data)
             res.status(200).json(result.data)
         })
         .catch(err=>{
-            res.status(500).json(err)
+            // console.log(err)
+            next()
+            // res.status(500).json(err)
         })
     }
 
